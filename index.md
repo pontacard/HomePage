@@ -2,15 +2,16 @@
 title: 私のプロフィール
 ---
 
-<nav>
-  <ul>
+<div class="header">
+  <ul class="header-list">
     <li><a href="/">Home</a></li>
     <li><a href="/publication">Publication</a></li>
     <li><a href="/research">Research</a></li>
     <li><a href="/activity">Activity</a></li>
     <li><a href="/contact">Contact</a></li>
   </ul>
-</nav>
+</div>
+
 
 こんにちは！
 
