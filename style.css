@@ -16,10 +16,10 @@
   
   .header-list a {
     text-decoration: none;
-    color: #333;
+    color: #377;
   }
-
-body {
+  
+  body {
     background-color: black;
     color: white;
-}
+  }
