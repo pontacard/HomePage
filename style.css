@@ -1,12 +1,27 @@
+/* 元のbody, header, nav, a, h2 のスタイルはそのまま */
+
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center; /* ← mainコンテンツ内のブロック要素を中央揃えにしやすくするため、一時的に追加。必要に応じて削除・調整してください。*/
 }
 
 header {
-    background-color: #f0f0f0;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    height: 30px; /* 高さは固定 */ /* paddingと合わせて70pxになります。box-sizing: border-box; を推奨 */
+    background-color: #faf8f8;
+    padding-top: 26px; /* 上部の余白を調整 */
+    padding-bottom: 15px;
+    padding-left: 20px;
+    text-align: left; /* header内の要素は左揃えに戻す */ /* Add this line for a 2px solid dark gray underline */
+}
+
+nav a {
+    text-decoration: none;
+    color: black; /* Set the link color to black */
+    font-size: 18px; /* フォントサイズを調整 */
 }
 
 nav ul {
@@ -20,6 +35,318 @@ nav li {
 }
 
 a {
+    font-size: 20px; /* フォントサイズを調整 */
     text-decoration: none;
+    color: #dd8204;
+    text-align: center; /* h2自体は中央揃え */
+    margin-top: 10px; /* 上部の余白を調整 */
+}
+h1 {
+    font-family: sans-serif; /* Academiconsフォントを使用 */
+    font-size: 25px;
+    font-weight: bold;
+    color: #030303;
+    padding: 1px;
+    text-align: center; /* h1自体は中央揃え */
+    margin-top: 1px; /* 上部の余白を調整 */
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-family: sans-serif; /* Academiconsフォントを使用 */
+    font-size: 35px;
+    font-weight: bold;
+    color: #030303;
+    padding: 1px;
+    text-align: center; /* h2自体は中央揃え */
+    margin-top: 15px; /* 上部の余白を調整 */
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-family: sans-serif; /* Academiconsフォントを使用 */
+    font-size: 36px;
+    font-weight: bold;
+    color: #060606;
+    background-color: #f9f8fae0;
+    padding: 10px;
+    text-align: center; /* h2自体は中央揃えのまま */
+    margin-top: 10px; /* 画像との間に少し余白を追加 */
+}
+
+/* mainのスタイル */
+main {
+    /* padding: 60px; を以下のように変更 */
+    padding-top: 1px; /* 上部のパディングを減らす (例: 20px) */
+    padding-right: 60px;
+    padding-bottom: 60px;
+    padding-left: 60px;
+    background-color: hsla(120, 9%, 94%, 0.966);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+p{
+    font-family: sans-serif;
+    font-size: 20px; /* フォントサイズを調整 */
+    line-height: 1.6; /* 行間を広げて読みやすくする */
+    margin: 20px 0; /* 上下に20pxの余白 */
+}
+
+
+li {
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+/* 画像コンテナのスタイル */
+.image-container {
+  /* float: left; は削除またはコメントアウト */
+  width: 300px;  /* 画像の幅に合わせて調整 */
+  height: 300px; /* 画像の高さに合わせて調整 */
+  overflow: hidden;
+  margin: 20px auto; /* 上下に30pxの余白、左右は自動で中央配置 */
+  /* display: block; /* divは元々blockですが、明示してもOKです */
+}
+
+.image-container img {
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 画像の縦横比を維持しつつ、コンテナを埋める */
+  display: block; /* img要素自体にmargin autoを効かせる場合などにも使う */
+}
+
+/* Update the .arXiv-image container style */
+.arXiv-image {
+  display: flex;          /* Make the container a flexbox */
+  justify-content: center; /* Center the items horizontally within the container */
+  align-items: center;    /* Align items vertically in the middle (if heights differ) */
+  gap: 20px;              /* Add space between the images/links */
+  margin: 20px auto;      /* Center the container itself and provide vertical margin */
+  padding: 10px 0;        /* Add some vertical padding for spacing */
+}
+
+/* Adjust the .arXiv-image img style */
+.arXiv-image a img { /* Target the images inside the links within .arXiv-image */
+  height: 70px;       /* Set a fixed height for consistent sizing */
+  width: auto;        /* Allow width to adjust proportionally */
+  max-width: 100px;   /* Ensure images don't get too wide */
+  /* Remove the problematic 'display: flex;' and 'margin: 1px auto;' from here,
+     as centering and layout are now handled by the parent flexbox */
+}
+
+
+/* About Me のテキストセクションのマージン調整 (もし必要なら) */
+main > p, main > section { /* main直下のpとsectionに適用 */
+    text-align: left; /* 個別に左揃えを指定 */
+    margin-left: auto; /* もしこれらのセクションも中央に寄せたいブロックなら */
+    margin-right: auto; /* このようにautoにするが、通常テキストは幅いっぱいに広がることが多い */
+    max-width: 800px; /* 例えば、テキストブロックの最大幅を指定して読みやすくする */
+    padding: 0 20px; /* 左右に少しパディング */
+}
+
+footer {
+    text-align: center; /* フッターのテキストは中央揃え */
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #f0f0f0;
+}
+
+/* Styles for Publication Page */
+.publications-section {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.publications-section h2 {
+    font-size: 30px;
     color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.publication-item {
+    margin-bottom: 40px;
+}
+
+.publication-item h3 {
+    font-size: 24px;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: left; /* Ensure headings within publication items are left-aligned */
+}
+
+.publication-item ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.publication-item li {
+    margin-bottom: 15px;
+    padding-left: 20px; /* Space for the custom bullet */
+    position: relative;
+    list-style: none; /* Ensure no default bullet points */
+}
+
+/* New style for the container holding thumbnail and text */
+.publication-details {
+    display: flex;          /* Make this a flex container */
+    align-items: flex-start; /* Align items to the top (thumbnail and text) */
+    gap: 20px;              /* Space between the thumbnail and the text content */
+    margin-bottom: 10px;    /* Space between individual publication entries */
+}
+
+/* Style for the thumbnail image */
+.publication-thumbnail {
+    width: 220px;         /* Fixed width for thumbnails */
+    height: 200px;        /* Fixed height to make them square *    object-fit: cover;   /* Crop image to fit the square area */
+    border-radius: 5px;   /* Slightly rounded corners for aesthetics */
+    flex-shrink: 0;       /* Prevent the thumbnail from shrinking when space is limited */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the text content next to the thumbnail */
+.publication-text {
+    flex-grow: 1;         /* Allow text to take up the remaining space */
+}
+
+/* Ensure paragraph within publication details is left-aligned and has correct margins */
+.publication-text p {
+    margin: 0; /* Remove default paragraph margins */
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Adjust general publication item link styles if necessary */
+.publication-item a {
+    color: #007bff; /* Blue for publication links */
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: normal; /* Ensure these links are not bold if other 'a' tags are */
+}
+
+.publication-item a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* ===============================================
+   Activity Page Styles
+   =============================================== */
+
+/* ===============================================
+   Activity Page Styles (Updated to match Publication style)
+   =============================================== */
+
+/* This style will wrap each section (Presentations, Awards) in a white card with a shadow. */
+.activity-section {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left; /* Ensure content within the card is left-aligned */
+}
+
+/* Style for the headings within each section, e.g., "Conference Presentations" */
+.activity-section h3 {
+    font-size: 24px;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.activity-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.activity-list li {
+    margin-bottom: 15px;
+    padding-left: 20px; /* Space for the custom bullet */
+    position: relative;
+    list-style: none; /* Ensure no default bullet points */
+    font-size: 18px;  /* Match the font size from publication text */
+    line-height: 1.5;   /* Match the line height */
+}
+
+/* Styling for any links within the activity list */
+.activity-list a {
+    color: #007bff; /* Blue for links */
+    text-decoration: none;
+}
+
+.activity-list a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* ===============================================
+   Contact Page Styles
+   =============================================== */
+
+.contact-container {
+    display: flex;         /* Use flexbox for side-by-side layout */
+    flex-wrap: wrap;       /* Allow items to stack on small screens */
+    gap: 40px;             /* Space between the info and map columns */
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-info, .contact-map {
+    flex: 1; /* Allows both columns to grow and share space */
+    min-width: 300px; /* Ensures columns don't get too narrow before stacking */
+}
+
+.contact-info h3, .contact-map h3 {
+    font-size: 24px;
+    color: #555;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Makes the embedded Google Map responsive */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 75%; /* Sets aspect ratio (4:3). Adjust if needed. 56.25% for 16:9 */
+    position: relative;
+    height: 0;
+    border-radius: 5px;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
 }
