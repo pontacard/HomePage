@@ -350,3 +350,63 @@ footer {
     position: absolute;
     border: 0;
 }
+
+@media (max-width: 768px) {
+
+    /* --- Navigation Bar --- */
+    /* Changes the navigation from a row to a stacked column */
+    header nav ul {
+        flex-direction: column;
+        align-items: center; /* Center items in the column */
+        gap: 10px; /* Reduce the gap for a vertical layout */
+    }
+
+    /* --- General Layout & Fonts --- */
+    /* Reduce padding on the main content to save space */
+    main {
+        padding: 20px;
+    }
+
+    /* Reduce font sizes for better readability on small screens */
+    h1, .home-intro h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    /* --- Home Page: Profile Section --- */
+    /* The profile container will stack the image and text vertically */
+    .profile-container {
+        flex-direction: column;
+        align-items: center; /* Center the profile picture */
+    }
+
+    .profile-text {
+        text-align: center; /* Center the text below the picture */
+    }
+
+    /* --- Publication Page: Thumbnail --- */
+    /* Makes the publication thumbnail and text stack vertically */
+    .publication-details {
+        flex-direction: column;
+    }
+
+    .publication-thumbnail {
+        width: 180px;  /* Make thumbnail a bit smaller */
+        height: 150px;
+        align-self: center; /* Center the thumbnail when stacked */
+    }
+
+    /* --- Activity & Contact Pages --- */
+    /* Reduce padding inside the 'card' sections */
+    .activity-section,
+    .contact-container {
+        padding: 20px;
+    }
+}
