@@ -356,20 +356,40 @@ footer {
     /* --- Navigation Bar --- */
     /* Changes the navigation from a row to a stacked column */
     header nav ul {
-        flex-direction: column;
-        align-items: center; /* Center items in the column */
-        gap: 10px; /* Reduce the gap for a vertical layout */
-    }
+    flex-wrap: wrap;           /* Allows items to wrap onto a new line */
+    justify-content: center;   /* Centers the navigation links on the second line */
+    row-gap: 15px;             /* Adds space between the name (line 1) and the links (line 2) */
+}
+
+/* Target the first list item (your name) */
+header nav ul li:first-child {
+    flex-basis: 100%;          /* Makes it take up the full width, forcing others to the next line */
+    text-align: center;        /* Centers your name on the first line */
+}
+    /* Add vertical dividers between navigation links */
+
+
+    header {
+    display: flex;
+    align-items: center;
+    height: 30px; /* 高さは固定 */ /* paddingと合わせて70pxになります。box-sizing: border-box; を推奨 */
+    background-color: #faf8f8;
+    padding-top: 26px; /* 上部の余白を調整 */
+    padding-bottom: 5px;
+    padding-left: 6px;
+    text-align: left; /* header内の要素は左揃えに戻す */ /* Add this line for a 2px solid dark gray underline */
+}
 
     /* --- General Layout & Fonts --- */
     /* Reduce padding on the main content to save space */
     main {
-        padding: 20px;
+        padding: 8px;
     }
 
     /* Reduce font sizes for better readability on small screens */
     h1, .home-intro h1 {
-        font-size: 32px;
+        text-align: center;  
+        font-size: 0px;
     }
 
     h2 {
@@ -398,8 +418,8 @@ footer {
     }
 
     .publication-thumbnail {
-        width: 180px;  /* Make thumbnail a bit smaller */
-        height: 150px;
+        width: 300px;  /* Make thumbnail a bit smaller */
+        height: 273px;
         align-self: center; /* Center the thumbnail when stacked */
     }
 
