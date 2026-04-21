@@ -280,8 +280,9 @@ footer {
 
 /* Styling for any links within the activity list */
 .activity-list a {
-    color: #007bff; /* Blue for links */
+    color: hsl(0, 0%, 2%); /* Blue for links */
     text-decoration: none;
+    font-size: 18px;
 }
 
 .activity-list a:hover {
