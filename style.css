@@ -274,7 +274,7 @@ footer {
     padding-left: 20px; /* Space for the custom bullet */
     position: relative;
     list-style: none; /* Ensure no default bullet points */
-    font-size: 18px;  /* Match the font size from publication text */
+    font-size: 16px;  /* Match the font size from publication text */
     line-height: 1.5;   /* Match the line height */
 }
 
@@ -282,7 +282,7 @@ footer {
 .activity-list a {
     color: hsl(0, 0%, 2%); /* Blue for links */
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .activity-list a:hover {
